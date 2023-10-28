@@ -9,6 +9,7 @@ public class Car {
     private String fuelType;
     private double dailyRentCharge;
 
+    //constructors
     public Car() {
 
     }
@@ -22,6 +23,7 @@ public class Car {
         this.dailyRentCharge = dailyRentCharge;
     }
 
+    //getters, setters
     public int getId() {
         return id;
     }

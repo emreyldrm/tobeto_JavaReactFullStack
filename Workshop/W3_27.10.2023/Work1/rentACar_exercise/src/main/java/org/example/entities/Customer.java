@@ -9,6 +9,7 @@ public class Customer {
     private String identifyNumber;
     private int driverLicenseYear;
 
+    //constructors
     public Customer() {
 
     }
@@ -22,6 +23,7 @@ public class Customer {
         this.driverLicenseYear = driverLicenseYear;
     }
 
+    //getters, setters
     public int getId() {
         return id;
     }
