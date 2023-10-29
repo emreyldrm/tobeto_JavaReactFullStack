@@ -5,7 +5,7 @@ public class Customer {
     private String fName;
     private String lName;
     private String phone;
-    private String age;
+    private int age;
     private String identifyNumber;
     private int driverLicenseYear;
 
@@ -13,7 +13,7 @@ public class Customer {
     public Customer() {
 
     }
-    public Customer(int id, String fName, String lName, String phone, String age, String identifyNumber, int driverLicenseYear) {
+    public Customer(int id, String fName, String lName, String phone, int age, String identifyNumber, int driverLicenseYear) {
         this.id = id;
         this.fName = fName;
         this.lName = lName;
@@ -56,11 +56,11 @@ public class Customer {
         this.phone = phone;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
