@@ -1,9 +1,8 @@
 package org.example;
 
-import org.example.business.CarManager;
-import org.example.dataAccess.CarDao;
-import org.example.dataAccess.HibernateCarDao;
-import org.example.dataAccess.JdbcCarDao;
+import org.example.business.RentManager;
+import org.example.dataAccess.HibernateRentACarDao;
+import org.example.dataAccess.JdbcRentACarDao;
 import org.example.entities.Car;
 import org.example.entities.Customer;
 
@@ -16,13 +15,19 @@ public class Main {
         //Customer created.
         Customer customer = new Customer(1,"Emre","Yıldırım","05052021820",24,"50520210144",2);
 
+
+        RentManager rentManager = new RentManager(new HibernateRentACarDao());
         //Cars added to database.
-        CarManager carManager = new CarManager(new HibernateCarDao());
-        carManager.add(car);
-        carManager.delete(car);
+        rentManager.addCar(car);
+
+        //Customer added to database.
+        rentManager.addCustomer(customer);
 
         //Rent a Car
-        CarManager carManager1 = new CarManager(new HibernateCarDao());
-        carManager1.rent(car,customer,3);
+        rentManager.rent(car,customer,3);
+
+        //Entities deleted from database.
+        rentManager.delete(car);
+        rentManager.delete(customer);
     }
 }
