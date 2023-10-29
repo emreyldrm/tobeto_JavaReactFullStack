@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         Car car = new Car(1,"Hyundai","i20",2018,"Auto","Diesel",5000);
-        CarManager carManager = new CarManager();
+        CarManager carManager = new CarManager(new JdbcCarDao());
         carManager.add(car);
         carManager.delete(car);
     }
