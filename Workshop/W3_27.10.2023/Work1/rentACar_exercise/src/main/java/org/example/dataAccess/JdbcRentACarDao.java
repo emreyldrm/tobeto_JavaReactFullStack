@@ -29,10 +29,12 @@ public class JdbcRentACarDao implements RentACarDao {
 
     @Override
     public void rent(Car car, Customer customer, int day) {
+        System.out.println("**********");
         System.out.println(car.getBrand() + " " + car.getModel() + " aracı " +
                 customer.getfName()+ " "  + customer.getlName() + " isimli müşteriye " +
                 day + " günlüğüne kiralanmıştır.");
         System.out.println("Ödeyeceği tutar : " + day * car.getDailyRentCharge() + " TL dir.");
         System.out.println("Kira sözleşmesi, JDBC ile veritabanına eklenmiştir.");
+        System.out.println("**********");
     }
 }

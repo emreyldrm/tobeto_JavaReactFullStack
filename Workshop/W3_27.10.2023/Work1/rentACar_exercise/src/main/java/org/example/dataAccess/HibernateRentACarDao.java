@@ -19,7 +19,7 @@ public class HibernateRentACarDao implements RentACarDao {
     @Override
     public void delete(Customer customer) {
         System.out.println(customer.getfName() + " " +
-                customer.getlName() + " JDBC ile veritabanından silinmiştir. ");
+                customer.getlName() + " Hibernate ile veritabanından silinmiştir. ");
     }
 
     @Override
@@ -30,10 +30,12 @@ public class HibernateRentACarDao implements RentACarDao {
 
     @Override
     public void rent(Car car, Customer customer, int day) {
+        System.out.println("**********");
         System.out.println(car.getBrand() + " " + car.getModel() + " aracı " +
                 customer.getfName()+ " "  + customer.getlName() + " isimli müşteriye " +
                 day + " günlüğüne kiralanmıştır.");
         System.out.println("Ödeyeceği tutar : " + day * car.getDailyRentCharge() + " TL dir.");
         System.out.println("Kira sözleşmesi, Hibernate ile veritabanına eklenmiştir.");
+        System.out.println("**********");
     }
 }
