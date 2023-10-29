@@ -1,6 +1,10 @@
 package org.example;
 
 import org.example.business.RentManager;
+import org.example.core.logging.DatabaseLogger;
+import org.example.core.logging.FileLogger;
+import org.example.core.logging.Logger;
+import org.example.core.logging.MailLogger;
 import org.example.dataAccess.HibernateRentACarDao;
 import org.example.dataAccess.JdbcRentACarDao;
 import org.example.entities.Car;
@@ -22,8 +26,9 @@ public class Main {
         Customer customer2 = new Customer(2,"Engin","Demiroğ","05124568710",35,"15624488466",10);
 
         Customer[] customers = {customer1,customer2};
+        Logger[] loggers = {new MailLogger(), new FileLogger(), new DatabaseLogger()};
 
-        RentManager rentManager = new RentManager(new JdbcRentACarDao());
+        RentManager rentManager = new RentManager(new JdbcRentACarDao(), loggers);
 
         //Cars added to database.
         for (Car car:cars) {
