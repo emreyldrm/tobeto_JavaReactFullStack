@@ -51,5 +51,7 @@ public class Main {
         System.out.println("-------------------");
         rentManager.delete(car1);
         rentManager.delete(customer1);
+
+        //test clone repository
     }
 }
