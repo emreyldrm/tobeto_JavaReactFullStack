@@ -52,6 +52,5 @@ public class Main {
         rentManager.delete(car1);
         rentManager.delete(customer1);
 
-        //test clone repository
     }
 }
