@@ -2,6 +2,8 @@ package com.tobeto.rentACar.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Table(name = "customers")
 @Entity
 public class Customer {
@@ -21,4 +23,6 @@ public class Customer {
     private String mail;
     @Column(name = "driver_license_year")
     private int licenseYear;
+    @OneToMany(mappedBy = "customer")
+    private List<Rent> rents;
 }

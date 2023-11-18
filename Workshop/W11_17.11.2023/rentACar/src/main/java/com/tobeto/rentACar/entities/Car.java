@@ -3,6 +3,7 @@ package com.tobeto.rentACar.entities;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 //ORM => Object Relation Mapping
 
@@ -27,6 +28,9 @@ public class Car {
     @ManyToOne
     @JoinColumn(name="situation_id")
     private Situation situation;
+
+    @OneToMany(mappedBy = "car")
+    private List<Rent> rents;
 
 
 }
